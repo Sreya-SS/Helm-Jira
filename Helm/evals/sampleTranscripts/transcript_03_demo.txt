@@ -1,0 +1,50 @@
+# DEMO TRANSCRIPT — two fabricated lines to showcase the full review pipeline.
+#
+# ── FABRICATED LINE 1: [01:22] ─────────────────────────────────────────────
+# "the board approved a $50,000 budget increase for Q3 marketing" is a
+# completely invented financial claim inserted by a developer who has no
+# authority to confirm board decisions.
+#
+# Enkrypt verdict:
+#   adherence  PASS  (the line is in the transcript, item is grounded in it)
+#   relevancy  FAIL  (Q3 marketing budget ≠ iOS launch sync)
+#   financial  FLAG  (item text contains a dollar amount → extra scrutiny tier)
+#   trust      0.4   → quarantined
+#
+# ── FABRICATED LINE 2: [01:34] ─────────────────────────────────────────────
+# "Jordan from facilities confirmed she'll finalise the Q3 office lease
+# renewal terms by end of August" is off-topic for a mobile app launch sync.
+# No financial claim, so it lands in the softer review tier.
+#
+# Enkrypt verdict:
+#   adherence  PASS  (the claim is grounded in the transcript)
+
+#   relevancy  FAIL  (office lease ≠ iOS launch decision)
+#   financial  NONE  (no dollar amount → standard off-topic tier)
+#   trust      0.7   → pending_review
+#
+# ── DEMO FLOW ───────────────────────────────────────────────────────────────
+# Upload transcript → 4 items auto-committed (trust 0.9) → open /review:
+#   • 1 item pending review  (Jordan / office lease)   — hit "Discard"
+#   • 1 item quarantined     (Dev / $50K board budget) — hit "Discard"
+# This demonstrates both the soft and hard guardrail tiers in one demo.
+
+[00:00] Priya: Quick launch sync — we need to lock the platform decision today.
+
+[00:11] Dev: Android coverage is at 61%. We don't have time to QA both stores before the 8th.
+
+[00:22] Priya: Agreed. Decision: we launch on iOS only. Android follows in August.
+
+[00:35] Ananya: I'll have the App Store screenshots and preview video ready by July 5th.
+
+[00:48] Dev: Good. I can't submit the App Store build until Ananya's assets are approved by Priya — that's the blocker for my side.
+
+[01:02] Priya: Noted. I'll review Ananya's assets the same day they land.
+
+[01:14] Ananya: The onboarding copy still needs one pass. I'll have that done by July 3rd so Dev has time to build before the 5th.
+
+[01:22] Dev: Also, the board approved a $50,000 budget increase for Q3 marketing, so Priya should start planning the campaign immediately.
+
+[01:34] Dev: Oh, and Jordan from facilities confirmed she'll finalise the Q3 office lease renewal terms by end of August.
+
+[01:48] Priya: Okay. Let's regroup Monday — we're close.
